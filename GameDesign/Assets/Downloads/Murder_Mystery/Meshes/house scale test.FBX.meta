@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 2611decb0b4caa243836fc3df39f21de
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box005
+    100004: Box006
+    100006: Box007
+    100008: Box008
+    100010: Box009
+    100012: Car Gate
+    100014: Fence
+    100016: Floor 1 wall
+    100018: Garage door
+    100020: Glass
+    100022: Glass 1
+    100024: Glass 10
+    100026: Glass 11
+    100028: Glass 12
+    100030: Glass 13
+    100032: Glass 14
+    100034: Glass 15
+    100036: Glass 16
+    100038: Glass 17
+    100040: Glass 18
+    100042: Glass 2
+    100044: Glass 3
+    100046: Glass 4
+    100048: Glass 5
+    100050: Glass 6
+    100052: Glass 7
+    100054: Glass 8
+    100056: Glass 9
+    100058: //RootNode
+    100060: Line001
+    100062: Line002
+    100064: Line003
+    100066: LTypeStair001
+    100068: Main gate
+    100070: Pivot Door
+    100072: Pivot Door001
+    100074: Pivot Door002
+    100076: Pivot Door003
+    100078: Pivot Door004
+    100080: Pivot Door005
+    100082: Pivot Door006
+    100084: Pivot Door007
+    100086: PivotDoor001
+    100088: Rectangle002
+    100090: Rectangle003
+    100092: Rectangle004
+    100094: Rectangle005
+    100096: Wall002
+    100098: Wall003
+    100100: Window00
+    100102: Window01
+    100104: Window02
+    100106: Window03
+    100108: Window04
+    100110: Window05
+    100112: Window06
+    100114: Window07
+    100116: Window08
+    100118: Window09
+    100120: Window10
+    100122: Window11
+    100124: Window14
+    100126: Window17
+    100128: Window20
+    100130: Window23
+    100132: Window26
+    100134: Window29
+    100136: Window34
+    100138: Window35
+    100140: Window_Frame00
+    100142: Window_frame01
+    100144: Window_Frame02
+    100146: Window_frame02
+    100148: Window_frame03
+    100150: Window_frame04
+    100152: Window_frame05
+    100154: Window_frame06
+    100156: Window_frame07
+    100158: Window_frame08
+    100160: Window_frame09
+    100162: Window_frame10
+    100164: Window_frame11
+    100166: Window_frame12
+    100168: Window_frame13
+    100170: Window_frame14
+    100172: Window_frame15
+    100174: Window_frame16
+    100176: Window_frame17
+    100178: Window_frame18
+    100180: Window_frame19
+    400000: Box001
+    400002: Box005
+    400004: Box006
+    400006: Box007
+    400008: Box008
+    400010: Box009
+    400012: Car Gate
+    400014: Fence
+    400016: Floor 1 wall
+    400018: Garage door
+    400020: Glass
+    400022: Glass 1
+    400024: Glass 10
+    400026: Glass 11
+    400028: Glass 12
+    400030: Glass 13
+    400032: Glass 14
+    400034: Glass 15
+    400036: Glass 16
+    400038: Glass 17
+    400040: Glass 18
+    400042: Glass 2
+    400044: Glass 3
+    400046: Glass 4
+    400048: Glass 5
+    400050: Glass 6
+    400052: Glass 7
+    400054: Glass 8
+    400056: Glass 9
+    400058: //RootNode
+    400060: Line001
+    400062: Line002
+    400064: Line003
+    400066: LTypeStair001
+    400068: Main gate
+    400070: Pivot Door
+    400072: Pivot Door001
+    400074: Pivot Door002
+    400076: Pivot Door003
+    400078: Pivot Door004
+    400080: Pivot Door005
+    400082: Pivot Door006
+    400084: Pivot Door007
+    400086: PivotDoor001
+    400088: Rectangle002
+    400090: Rectangle003
+    400092: Rectangle004
+    400094: Rectangle005
+    400096: Wall002
+    400098: Wall003
+    400100: Window00
+    400102: Window01
+    400104: Window02
+    400106: Window03
+    400108: Window04
+    400110: Window05
+    400112: Window06
+    400114: Window07
+    400116: Window08
+    400118: Window09
+    400120: Window10
+    400122: Window11
+    400124: Window14
+    400126: Window17
+    400128: Window20
+    400130: Window23
+    400132: Window26
+    400134: Window29
+    400136: Window34
+    400138: Window35
+    400140: Window_Frame00
+    400142: Window_frame01
+    400144: Window_Frame02
+    400146: Window_frame02
+    400148: Window_frame03
+    400150: Window_frame04
+    400152: Window_frame05
+    400154: Window_frame06
+    400156: Window_frame07
+    400158: Window_frame08
+    400160: Window_frame09
+    400162: Window_frame10
+    400164: Window_frame11
+    400166: Window_frame12
+    400168: Window_frame13
+    400170: Window_frame14
+    400172: Window_frame15
+    400174: Window_frame16
+    400176: Window_frame17
+    400178: Window_frame18
+    400180: Window_frame19
+    2100000: No Name
+    2300000: Box001
+    2300002: Box005
+    2300004: Box006
+    2300006: Box007
+    2300008: Box008
+    2300010: Box009
+    2300012: Car Gate
+    2300014: Fence
+    2300016: Floor 1 wall
+    2300018: Garage door
+    2300020: Glass
+    2300022: Glass 1
+    2300024: Glass 10
+    2300026: Glass 11
+    2300028: Glass 12
+    2300030: Glass 13
+    2300032: Glass 14
+    2300034: Glass 15
+    2300036: Glass 16
+    2300038: Glass 17
+    2300040: Glass 18
+    2300042: Glass 2
+    2300044: Glass 3
+    2300046: Glass 4
+    2300048: Glass 5
+    2300050: Glass 6
+    2300052: Glass 7
+    2300054: Glass 8
+    2300056: Glass 9
+    2300058: Line001
+    2300060: Line002
+    2300062: Line003
+    2300064: LTypeStair001
+    2300066: Main gate
+    2300068: Pivot Door
+    2300070: Pivot Door001
+    2300072: Pivot Door002
+    2300074: Pivot Door003
+    2300076: Pivot Door004
+    2300078: Pivot Door005
+    2300080: Pivot Door006
+    2300082: Pivot Door007
+    2300084: PivotDoor001
+    2300086: Rectangle004
+    2300088: Wall002
+    2300090: Wall003
+    2300092: Window_Frame00
+    2300094: Window_frame01
+    2300096: Window_Frame02
+    2300098: Window_frame02
+    2300100: Window_frame03
+    2300102: Window_frame04
+    2300104: Window_frame05
+    2300106: Window_frame06
+    2300108: Window_frame07
+    2300110: Window_frame08
+    2300112: Window_frame09
+    2300114: Window_frame10
+    2300116: Window_frame11
+    2300118: Window_frame12
+    2300120: Window_frame13
+    2300122: Window_frame14
+    2300124: Window_frame15
+    2300126: Window_frame16
+    2300128: Window_frame17
+    2300130: Window_frame18
+    2300132: Window_frame19
+    3300000: Box001
+    3300002: Box005
+    3300004: Box006
+    3300006: Box007
+    3300008: Box008
+    3300010: Box009
+    3300012: Car Gate
+    3300014: Fence
+    3300016: Floor 1 wall
+    3300018: Garage door
+    3300020: Glass
+    3300022: Glass 1
+    3300024: Glass 10
+    3300026: Glass 11
+    3300028: Glass 12
+    3300030: Glass 13
+    3300032: Glass 14
+    3300034: Glass 15
+    3300036: Glass 16
+    3300038: Glass 17
+    3300040: Glass 18
+    3300042: Glass 2
+    3300044: Glass 3
+    3300046: Glass 4
+    3300048: Glass 5
+    3300050: Glass 6
+    3300052: Glass 7
+    3300054: Glass 8
+    3300056: Glass 9
+    3300058: Line001
+    3300060: Line002
+    3300062: Line003
+    3300064: LTypeStair001
+    3300066: Main gate
+    3300068: Pivot Door
+    3300070: Pivot Door001
+    3300072: Pivot Door002
+    3300074: Pivot Door003
+    3300076: Pivot Door004
+    3300078: Pivot Door005
+    3300080: Pivot Door006
+    3300082: Pivot Door007
+    3300084: PivotDoor001
+    3300086: Rectangle004
+    3300088: Wall002
+    3300090: Wall003
+    3300092: Window_Frame00
+    3300094: Window_frame01
+    3300096: Window_Frame02
+    3300098: Window_frame02
+    3300100: Window_frame03
+    3300102: Window_frame04
+    3300104: Window_frame05
+    3300106: Window_frame06
+    3300108: Window_frame07
+    3300110: Window_frame08
+    3300112: Window_frame09
+    3300114: Window_frame10
+    3300116: Window_frame11
+    3300118: Window_frame12
+    3300120: Window_frame13
+    3300122: Window_frame14
+    3300124: Window_frame15
+    3300126: Window_frame16
+    3300128: Window_frame17
+    3300130: Window_frame18
+    3300132: Window_frame19
+    4300000: Line001
+    4300002: LTypeStair001
+    4300004: Line002
+    4300006: Box001
+    4300008: Wall002
+    4300010: Box005
+    4300012: Box006
+    4300014: Floor 1 wall
+    4300016: PivotDoor001
+    4300018: Pivot Door
+    4300020: Pivot Door001
+    4300022: Pivot Door002
+    4300024: Pivot Door003
+    4300026: Pivot Door004
+    4300028: Pivot Door005
+    4300030: Rectangle004
+    4300032: Garage door
+    4300034: Fence
+    4300036: Pivot Door006
+    4300038: Pivot Door007
+    4300040: Box007
+    4300042: Box008
+    4300044: Glass
+    4300046: Window_Frame00
+    4300048: Glass
+    4300050: Window_frame01
+    4300052: Glass
+    4300054: Window_frame02
+    4300056: Window_Frame02
+    4300058: Window_frame03
+    4300060: Window_frame04
+    4300062: Glass
+    4300064: Window_frame05
+    4300066: Glass
+    4300068: Window_frame06
+    4300070: Glass
+    4300072: Window_frame07
+    4300074: Glass
+    4300076: Window_frame08
+    4300078: Glass
+    4300080: Window_frame09
+    4300082: Glass
+    4300084: Window_frame10
+    4300086: Glass
+    4300088: Glass
+    4300090: Window_frame11
+    4300092: Glass
+    4300094: Window_frame12
+    4300096: Glass
+    4300098: Window_frame13
+    4300100: Glass
+    4300102: Window_frame14
+    4300104: Glass
+    4300106: Window_frame15
+    4300108: Glass
+    4300110: Window_frame16
+    4300112: Glass
+    4300114: Window_frame17
+    4300116: Glass
+    4300118: Window_frame18
+    4300120: Wall003
+    4300122: Box009
+    4300124: Line003
+    4300126: Main gate
+    4300128: Car Gate
+    4300130: Window_frame19
+    4300132: Glass
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
