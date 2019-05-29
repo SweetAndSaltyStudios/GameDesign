@@ -1,31 +1,63 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CutsceneTextBox_UI : MonoBehaviour
+namespace Sweet_And_Salty_Studios
 {
-    [SerializeField] Image cutsceneTextBoxImage;
-
-    [Header("CUTSCENE IMAGES")]
-    [SerializeField] private Sprite[] cutsceneImages;
-
-    private void Awake()
+    public class CutsceneTextBox_UI : MonoBehaviour
     {
-        if(cutsceneTextBoxImage != null)
-        {
-            cutsceneTextBoxImage.gameObject.SetActive(false);
-        }
-    }
+        #region VARIABLES
 
-    public void ShowCutscene(Image cutsceneImage)
-    {
-        for (int i = 0; i < cutsceneImages.Length; i++)
+        public Image CutsceneImage;
+        public Text InfoText;
+
+        [Header("Cutscene Sprites")]
+        public Sprite[] CutsceneSprites;
+
+        private string triggerInfoText;
+        private readonly string defaultInfoText = "DefaultText";
+
+        #endregion VARIABLES
+
+        #region  UNITY_FUNCTIONS
+
+        private void Awake()
         {
-            if(cutsceneImages[i] == cutsceneImage)
+            if (CutsceneImage != null)
             {
-                cutsceneTextBoxImage.sprite = cutsceneImages[i];
-                cutsceneTextBoxImage.gameObject.SetActive(true);
-                return;
+                CutsceneImage.gameObject.SetActive(false);
             }
         }
+
+        private void Start()
+        {
+            triggerInfoText = "Press '" + InputManager.Instance.Interaction.ToString() + "' to continue";
+        }
+
+        #endregion UNITY_FUNCTIONS
+
+        #region CUSTOM_FUNCTIONS
+
+        public void ShowCutscene(Sprite cutsceneSprite, bool showInfoText)
+        {
+            for (int i = 0; i < CutsceneSprites.Length; i++)
+            {
+                if (CutsceneSprites[i] == cutsceneSprite)
+                {
+                    CutsceneImage.sprite = CutsceneSprites[i];
+
+                    InfoText.text = showInfoText ? triggerInfoText : defaultInfoText;
+    
+                    CutsceneImage.gameObject.SetActive(true);
+                    return;
+                }
+            }
+        }
+
+        public void HideCutscene()
+        {
+            CutsceneImage.gameObject.SetActive(false);
+        }
+
+        #endregion CUSTOM_FUNCTIONS
     }
 }

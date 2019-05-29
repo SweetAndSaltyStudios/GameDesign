@@ -1,3 +1,4 @@
+using Sweet_And_Salty_Studios;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -9,6 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        [Space]
         [Header("MOVEMENT")]
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -19,30 +21,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_GravityMultiplier;
         [SerializeField] private float m_StepInterval;
 
+        [Space]
         [Header("JUMP")]
         [SerializeField] private bool canJump;
         [SerializeField] private MouseLook m_MouseLook;
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
 
+        [Space]
         [Header("OTHERS")]
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
         [SerializeField] private bool m_UseHeadBob;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
 
+        [Space]
         [Header("AUDIO")]
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-
-        [Header("KEY BINDINGS")]
-        [SerializeField] KeyCode move_Forward;
-        [SerializeField] KeyCode move_Right;
-        [SerializeField] KeyCode move_Back;
-        [SerializeField] KeyCode move_Left;
-        [SerializeField] KeyCode jump;
-        [SerializeField] protected KeyCode interaction;
-        [SerializeField] KeyCode run;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -80,8 +76,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump && canJump)
             {
-                m_Jump = Input.GetKeyDown(jump);
-                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = InputManager.Instance.GetKeyDown_Jump;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -220,7 +215,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(run);
+            m_IsWalking = InputManager.Instance.GetKeyDown_Run == false;
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;

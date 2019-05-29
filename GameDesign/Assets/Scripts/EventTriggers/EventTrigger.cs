@@ -1,35 +1,55 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
-public abstract class EventTrigger : MonoBehaviour
+namespace Sweet_And_Salty_Studios
 {
-    [Header("Events")]
-    [SerializeField] private UnityEvent[] unityEvents;
-
-    [Header("Object Visuals")]
-    [SerializeField] private bool showVisuals = false;
-    [SerializeField] private GameObject visualsGameObject;
-
-    private void Start()
+    public abstract class EventTrigger : MonoBehaviour
     {
-        SetVisuals();
-    }
+        #region VARIABLES
 
-    private void OnValidate()
-    {
-        SetVisuals();
-    }
+        [Space]
+        [Header("Object Visuals")]
+        public bool ShowVisuals = false;
 
-    private void SetVisuals()
-    {
-        if (visualsGameObject == null)
-            visualsGameObject = transform.GetChild(0).gameObject;
+        private GameObject visualsGameObject;
 
-        visualsGameObject.SetActive(showVisuals);
-    }
+        #endregion VARIABLES
 
-    void OnTriggerEnter(Collider other)
-    {
+        #region UNITY_FUNCTIONS
 
+        private void Start()
+        {
+            SetVisuals();
+        }
+
+        private void OnValidate()
+        {
+            SetVisuals();
+        }
+
+        protected virtual void OnTriggerEnter(Collider other)
+        {         
+
+        }
+
+        protected virtual void OnTriggerExit(Collider other)
+        {
+
+        }
+
+        #endregion UNITY_FUNCTIONS
+
+        #region CUSTOM_FUNCTIONS
+
+        private void SetVisuals()
+        {
+            if (visualsGameObject == null)
+            {
+                visualsGameObject = transform.GetChild(0).gameObject;
+            }
+
+            visualsGameObject.SetActive(ShowVisuals);
+        }
+
+        #endregion CUSTOM_FUNCTIONS      
     }
 }

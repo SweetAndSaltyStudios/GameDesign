@@ -1,18 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class UIManager : MonoBehaviour
+namespace Sweet_And_Salty_Studios
 {
-    // Start is called before the first frame update
-    void Start()
+    public class UIManager : MonoBehaviour
     {
-        
-    }
+        #region VARIABLES
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public CutsceneTextBox_UI CutsceneTextBox_UI;
+
+        #endregion VARIABLES
+
+        #region PROPERTIES
+
+        public static UIManager Instance
+        {
+            get;
+            private set;
+        }
+
+        #endregion PROPERTIES
+
+        #region UNITY_FUNCTIONS
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        #endregion UNITY_FUNCTIONS
     }
 }
