@@ -2,7 +2,7 @@
 
 namespace Sweet_And_Salty_Studios
 {
-    public class Key : MonoBehaviour, IInteractable
+    public class Key : Item, IInteractable
     {
         private Color normalColor = Color.white;
         private Color interactableColor = Color.yellow;

@@ -36,49 +36,15 @@ namespace Sweet_And_Salty_Studios
         {
             var mouseRay = mainCamera.ViewportPointToRay(Vector3.one * 0.5f);
 
-            Debug.DrawRay(mouseRay.origin, mouseRay.direction * interactRange, Color.red);
-
             if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, interactRange, interactableLayerMask))
             {
                 var interactable = hitInfo.collider.GetComponent<IInteractable>();
 
-                if (interactable != null)
-                {
-                    
-                        if (interactable == targetInteractable)
-                        {
-                            return;
-                        }
-
-                        if (targetInteractable != null)
-                        {
-                            targetInteractable.OnEndHover();
-                            targetInteractable = interactable;
-                            targetInteractable.OnStartHover();
-                            return;
-                        }
-
-                        targetInteractable = interactable;
-                        targetInteractable.OnStartHover();
-                    
-                }
-                else
-                {
-                    StopInteracting();
-                }
+             
             }
             else
             {
-                StopInteracting();
-            }
-        }
-
-        private void StopInteracting()
-        {
-            if (targetInteractable != null)
-            {
-                targetInteractable.OnEndHover();
-                targetInteractable = null;
+                
             }
         }
     }

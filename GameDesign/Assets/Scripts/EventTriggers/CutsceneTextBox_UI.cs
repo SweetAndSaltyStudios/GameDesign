@@ -6,7 +6,7 @@ public class CutsceneTextBox_UI : MonoBehaviour
     [SerializeField] Image cutsceneTextBoxImage;
 
     [Header("CUTSCENE IMAGES")]
-    [SerializeField] private Image[] cutsceneImages;
+    [SerializeField] private Sprite[] cutsceneImages;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class CutsceneTextBox_UI : MonoBehaviour
         {
             if(cutsceneImages[i] == cutsceneImage)
             {
-                cutsceneTextBoxImage = cutsceneImages[i];
+                cutsceneTextBoxImage.sprite = cutsceneImages[i];
                 cutsceneTextBoxImage.gameObject.SetActive(true);
                 return;
             }

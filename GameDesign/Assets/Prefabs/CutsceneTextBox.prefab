@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09a266b79c8d1f4e9c10afed5fb131d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneImage: {fileID: 21300000, guid: 989fecad94c1bb546b0b1d7071492731, type: 3}
+  unityEvents: []
   showVisuals: 1
   visualsGameObject: {fileID: 1154381047807705594}
+  cutsceneImage: {fileID: 21300000, guid: 989fecad94c1bb546b0b1d7071492731, type: 3}

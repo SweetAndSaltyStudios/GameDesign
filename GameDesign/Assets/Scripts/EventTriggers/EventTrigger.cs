@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
-public class CutsceneTrigger : MonoBehaviour
+public abstract class EventTrigger : MonoBehaviour
 {
-    [SerializeField] private Sprite cutsceneImage;
+    [Header("Events")]
+    [SerializeField] private UnityEvent[] unityEvents;
+
+    [Header("Object Visuals")]
     [SerializeField] private bool showVisuals = false;
     [SerializeField] private GameObject visualsGameObject;
 
@@ -22,5 +26,10 @@ public class CutsceneTrigger : MonoBehaviour
             visualsGameObject = transform.GetChild(0).gameObject;
 
         visualsGameObject.SetActive(showVisuals);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
     }
 }
