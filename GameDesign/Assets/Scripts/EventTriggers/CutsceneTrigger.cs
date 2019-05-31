@@ -11,14 +11,6 @@ namespace Sweet_And_Salty_Studios
         [Header("REFERENCES")]
         public Sprite CutsceneImageToShow;
 
-        [Space]
-        [Header("EVENT VARIABLES")]
-        public bool SingleInvoke;
-        public bool FreezeGame;
-
-        private int invokeCounter;
-        private Coroutine iFreezeGame_Coroutine;
-
         #endregion VARIABLES
 
         #region UNITY_FUNCTIONS
@@ -27,7 +19,7 @@ namespace Sweet_And_Salty_Studios
         {
             base.OnTriggerEnter(other);
 
-            if(SingleInvoke && invokeCounter > 0)
+            if (SingleInvoke && invokeCounter > 0)
             {
                 return;
             }
@@ -36,24 +28,19 @@ namespace Sweet_And_Salty_Studios
             {
                 if (iFreezeGame_Coroutine == null)
                 {
-                    iFreezeGame_Coroutine = StartCoroutine(IFreezeGame());
+                    iFreezeGame_Coroutine = StartCoroutine(IFreezeGame(() => UIManager.Instance.CutsceneTextBox_UI.HideCutscene()));
                 }
             }
 
             UIManager.Instance.CutsceneTextBox_UI.ShowCutscene(CutsceneImageToShow, FreezeGame);
 
-            invokeCounter++;       
+            invokeCounter++;
+
         }
 
         protected override void OnTriggerExit(Collider other)
         {
             base.OnTriggerExit(other);
-
-            if (iFreezeGame_Coroutine != null)
-            {
-                StopCoroutine(IFreezeGame());
-                iFreezeGame_Coroutine = null;
-            }
 
             UIManager.Instance.CutsceneTextBox_UI.HideCutscene();
         }
@@ -62,12 +49,6 @@ namespace Sweet_And_Salty_Studios
 
         #region CUSTOM_FUNCTIONS
 
-        private IEnumerator IFreezeGame()
-        {
-            Time.timeScale = 0;
-            yield return new WaitUntil(() => InputManager.Instance.GetKeyDown_Interaction);
-            Time.timeScale = 1;
-        }
 
         #endregion CUSTOM_FUNCTIONS
     }

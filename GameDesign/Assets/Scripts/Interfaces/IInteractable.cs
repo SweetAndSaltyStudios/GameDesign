@@ -1,6 +1,6 @@
 ﻿public interface IInteractable
 {
-    float PickupTime { get; }
+    float _PickupTime { get; }
 
     void OnStartHover();
 

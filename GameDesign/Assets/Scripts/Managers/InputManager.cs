@@ -21,6 +21,7 @@ namespace Sweet_And_Salty_Studios
 
         [Header("OTHERS")]
         public KeyCode Pause;
+        public KeyCode Inventory;
 
         #endregion VARIABLES
 
@@ -86,6 +87,21 @@ namespace Sweet_And_Salty_Studios
             get 
             {
                 return Input.GetKeyDown(Pause);
+            }
+        }
+        public bool GetKeyDown_Inventory
+        {
+            get 
+            {
+                return Input.GetKeyDown(Inventory);
+            }
+        }
+
+        public bool GetKey_Interaction
+        {
+            get 
+            {
+                return Input.GetKey(Interaction);
             }
         }
 
