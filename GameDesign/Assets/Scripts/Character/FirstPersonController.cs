@@ -12,33 +12,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [Space]
         [Header("MOVEMENT")]
-        [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
-        [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
-        [SerializeField] private float m_JumpSpeed;
-        [SerializeField] private float m_StickToGroundForce;
-        [SerializeField] private float m_GravityMultiplier;
-        [SerializeField] private float m_StepInterval;
+        public bool m_IsWalking;
+        public float m_WalkSpeed;
+        public float m_RunSpeed;
+        [Range(0f, 1f)] public float m_RunstepLenghten;
+        public float m_JumpSpeed;
+        public float m_StickToGroundForce;
+        public float m_GravityMultiplier;
+        public float m_StepInterval;
 
         [Space]
         [Header("JUMP")]
-        [SerializeField] private bool canJump;
-        [SerializeField] private MouseLook m_MouseLook;
-        [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
+        public bool canJump;
+        public MouseLook m_MouseLook;
+        public LerpControlledBob m_JumpBob = new LerpControlledBob();
 
         [Space]
         [Header("OTHERS")]
-        [SerializeField] private bool m_UseFovKick;
-        [SerializeField] private FOVKick m_FovKick = new FOVKick();
-        [SerializeField] private bool m_UseHeadBob;
-        [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
+        public bool m_UseFovKick;
+        public FOVKick m_FovKick = new FOVKick();
+        public bool m_UseHeadBob;
+        public CurveControlledBob m_HeadBob = new CurveControlledBob();
 
         [Space]
         [Header("AUDIO")]
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
-        [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
-        [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        public AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        public AudioClip m_JumpSound;           // the sound played when character leaves the ground.
+        public AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -213,7 +213,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = InputManager.Instance.GetKeyDown_Run == false;
+            m_IsWalking = InputManager.Instance.GetKey_Run == false;
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;

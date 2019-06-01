@@ -1,6 +1,8 @@
 ﻿public interface IInteractable
 {
-    float _PickupTime { get; }
+    bool CanInteract { get; set; }
+
+    float InteractionTime { get; }
 
     void OnStartHover();
 

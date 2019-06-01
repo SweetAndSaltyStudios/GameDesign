@@ -74,10 +74,7 @@ namespace Sweet_And_Salty_Studios
 
             if (HasItemTargeted())
             {
-                UIManager.Instance.Cursor.SetPickupProgressImage(true);
-                UIManager.Instance.Cursor.CursorText = currentlyTargetedInteractable.ToString();
-
-                if (InputManager.Instance.GetKey_Interaction)
+                if (InputManager.Instance.GetKey_Interaction && currentlyTargetedInteractable.CanInteract)
                 {
                     IncrementPickupProgressAndTryComplete();               
                 }
@@ -89,7 +86,7 @@ namespace Sweet_And_Salty_Studios
                 if (currentlyTargetedInteractable == null)
                     return;
 
-                var percent = currentPickupTimerElapsed / currentlyTargetedInteractable._PickupTime;
+                var percent = currentPickupTimerElapsed / currentlyTargetedInteractable.InteractionTime;
                 UIManager.Instance.Cursor.UpdatePickupProgressImage(percent);
             }          
         }
@@ -107,18 +104,13 @@ namespace Sweet_And_Salty_Studios
         {
             currentPickupTimerElapsed += Time.deltaTime;
 
-            if(currentPickupTimerElapsed >= currentlyTargetedInteractable._PickupTime)
+            if(currentPickupTimerElapsed >= currentlyTargetedInteractable.InteractionTime)
             {
-                MoveItemToInventory();
+                currentlyTargetedInteractable.OnInteract();
+                currentlyTargetedInteractable.OnEndHover();
+                currentlyTargetedInteractable = null;
+                currentPickupTimerElapsed = 0f;
             }
-        }
-
-        private void MoveItemToInventory()
-        {
-            currentlyTargetedInteractable.OnInteract();
-            currentlyTargetedInteractable = null;
-
-            UIManager.Instance.Cursor.SetPickupProgressImage(false);
         }
 
         private void InteractableRay()
@@ -129,16 +121,22 @@ namespace Sweet_And_Salty_Studios
 
                 if (interactable != null && interactable != currentlyTargetedInteractable)
                 {
+                    if(currentlyTargetedInteractable != null)
+                    {
+                        currentlyTargetedInteractable.OnEndHover();
+                    }
+
                     currentlyTargetedInteractable = interactable;
+                    currentlyTargetedInteractable.OnStartHover();
                 }
             }
             else
             {
                 if (currentlyTargetedInteractable != null)
-                {
-                    currentlyTargetedInteractable = null;
+                {                
                     currentPickupTimerElapsed = 0f;
-                    UIManager.Instance.Cursor.SetPickupProgressImage(false);
+                    currentlyTargetedInteractable.OnEndHover();
+                    currentlyTargetedInteractable = null;
                 }
             }
         }

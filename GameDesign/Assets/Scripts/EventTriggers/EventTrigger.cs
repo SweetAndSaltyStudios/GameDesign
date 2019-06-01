@@ -14,23 +14,19 @@ namespace Sweet_And_Salty_Studios
         public bool FreezeGame;
 
         [Space]
-        [Header("Object Visuals")]
+        [Header("TRIGGER VISUALS")]
         public bool ShowVisuals = false;
+        public Color CanInvoke_Color = Color.green;
+        public Color CanNotInvoke_Color = Color.red;
 
         protected int invokeCounter;
         protected Coroutine iFreezeGame_Coroutine;
 
-        private GameObject visualsGameObject;
         protected MeshRenderer meshRenderer;
 
         #endregion VARIABLES
 
         #region UNITY_FUNCTIONS
-
-        private void Awake()
-        {
-            meshRenderer = GetComponentInChildren<MeshRenderer>();
-        }
 
         private void Start()
         {
@@ -44,7 +40,7 @@ namespace Sweet_And_Salty_Studios
 
         protected virtual void OnTriggerEnter(Collider other)
         {      
-            meshRenderer.material.color = Color.red;            
+            meshRenderer.material.color = CanNotInvoke_Color;            
         }
 
         protected virtual void OnTriggerExit(Collider other)
@@ -60,7 +56,7 @@ namespace Sweet_And_Salty_Studios
                 return;
             }
 
-            meshRenderer.material.color = Color.green;
+            meshRenderer.material.color = CanInvoke_Color;
         }
 
         #endregion UNITY_FUNCTIONS
@@ -69,23 +65,23 @@ namespace Sweet_And_Salty_Studios
 
         private void SetVisuals()
         {
-            if (visualsGameObject == null)
+            if (meshRenderer == null)
             {
-                visualsGameObject = transform.GetChild(0).gameObject;
+                meshRenderer = GetComponent<MeshRenderer>();
             }
 
-            visualsGameObject.SetActive(ShowVisuals);
+            meshRenderer.enabled = ShowVisuals;
         }
 
-        protected IEnumerator IFreezeGame(Action foo = null)
+        protected IEnumerator IFreezeGame(Action eventAction = null)
         {
             Time.timeScale = 0;
             yield return new WaitUntil(() => InputManager.Instance.GetKeyDown_Interaction);
             Time.timeScale = 1;
 
-            if (foo != null)
+            if (eventAction != null)
             {
-                foo.Invoke();
+                eventAction.Invoke();
             }
         }
 

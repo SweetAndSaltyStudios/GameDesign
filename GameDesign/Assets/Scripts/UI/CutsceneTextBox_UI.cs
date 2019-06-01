@@ -19,7 +19,7 @@ namespace Sweet_And_Salty_Studios
         private Animator animator;
 
         private string triggerInfoText;
-        private readonly string defaultInfoText = "DefaultText";
+        private readonly string defaultInfoText = "";
 
         #endregion VARIABLES
 

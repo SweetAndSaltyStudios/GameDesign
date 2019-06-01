@@ -74,14 +74,7 @@ namespace Sweet_And_Salty_Studios
             {
                 return Input.GetKeyDown(Interaction);
             }
-        }
-        public bool GetKeyDown_Run
-        {
-            get 
-            {
-                return Input.GetKeyDown(Run);
-            }
-        }
+        }      
         public bool GetKeyDown_Pause
         {
             get 
@@ -97,6 +90,13 @@ namespace Sweet_And_Salty_Studios
             }
         }
 
+        public bool GetKey_Run
+        {
+            get 
+            {
+                return Input.GetKey(Run);
+            }
+        }
         public bool GetKey_Interaction
         {
             get 

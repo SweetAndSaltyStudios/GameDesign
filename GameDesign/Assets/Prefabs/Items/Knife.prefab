@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ef79150e7d84b4b8fa9b247144ee85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionPopupText: Knife
   PickupTime: 1
 --- !u!65 &7302228960460342388
 BoxCollider:
