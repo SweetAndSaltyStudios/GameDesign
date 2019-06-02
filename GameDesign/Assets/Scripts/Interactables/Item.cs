@@ -1,16 +1,25 @@
 ﻿using UnityEngine;
 
+public enum ITEM_TYPE
+{
+    TOOL,
+    CONSUMABLE,
+    MISCELLANEOUS
+}
+
 namespace Sweet_And_Salty_Studios
 {
     public class Item : MonoBehaviour, IInteractable
     {
         [Space]
         [Header("VARIABLES")]
-        public string InteractionPopupText;
+        public ITEM_TYPE Type;
+        public string InteractionPopupText;   
         public float PickupTime = 0;
         public AudioClip PickUp_Clip;
         public Color HoverColor = Color.yellow;
         private Color normalColor = Color.white;
+        [TextArea] public string Description;
 
         [Space]
         [Header("VISUALS")]

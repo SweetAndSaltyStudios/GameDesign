@@ -17,8 +17,12 @@ namespace Sweet_And_Salty_Studios
 
         [Space]
         [Header("PLAY CLIP AT TARGET POINT")]
-        public AudioClip AudioClip;
-        public Transform TargetPosition;
+        public AudioClip targetPoint_Clip;
+        public Transform TargetPoint;
+
+        [Space]
+        [Header("TELEPORT PLAYER TO TARGET POINT")]
+        public Transform TargetTeleportPoint;
 
         public float InteractionTime => _InteractionTime;
 
@@ -38,7 +42,7 @@ namespace Sweet_And_Salty_Studios
 
         public void OnInteract()
         {
-            if (TargetPosition != null && doorInteraction_Coroutine == null && CanInteract)
+            if (doorInteraction_Coroutine == null && CanInteract)
             {
                 meshRenderer.material.color = CanNotInvoke_Color;
                 doorInteraction_Coroutine = StartCoroutine(IDoorInteraction());
@@ -50,19 +54,46 @@ namespace Sweet_And_Salty_Studios
             UIManager.Instance.Cursor.SetPickupProgressImage(false);
         }     
 
+        private void OnDoorLocked(string debugText)
+        {
+            Debug.Log(debugText);
+
+            AudioSource.PlayClipAtPoint(DoorIsLocked_Clip, transform.position);
+        }
+
+        public void OnDoorUnlocked(string debugText)
+        {
+            Debug.Log(debugText);
+
+            if(TargetTeleportPoint != null)
+            {
+                PlayerController.Instance.SetNewPosition(TargetTeleportPoint.position);
+            }
+
+            AudioSource.PlayClipAtPoint(DoorIsOpen_Clip, transform.position);
+        }
+
         private IEnumerator IDoorInteraction()
         {
             CanInteract = false;
 
             if (IsLocked)
             {
-                Debug.LogError("DOOR IS LOCKED!");
-                AudioSource.PlayClipAtPoint(DoorIsLocked_Clip, transform.position);
+                if (UIManager.Instance.Inventory.ItemInInventory(Key))
+                {
+                    UIManager.Instance.Inventory.RemoveItem(Key);
+                    IsLocked = false;
+
+                    OnDoorUnlocked("YOU UNLOCKED THE DOOR!");  
+                }
+                else
+                {
+                    OnDoorLocked("DOOR IS LOCKED!");
+                }             
             }
             else
             {
-                Debug.Log("DOOR IS UNLOCKED!");
-                AudioSource.PlayClipAtPoint(DoorIsOpen_Clip, transform.position);
+                OnDoorUnlocked("DOOR IS UNLOCKED!");
             }
 
             yield return new WaitForSeconds(InteractionDelay);

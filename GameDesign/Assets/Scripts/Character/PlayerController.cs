@@ -40,7 +40,16 @@ namespace Sweet_And_Salty_Studios
         {
             get 
             {
-                return Time.timeScale != 0;
+                if(Time.timeScale == 0)
+                {
+                    m_MouseLook.SetCursorLock(false);
+                    return false;
+                }
+                else
+                {
+                    m_MouseLook.SetCursorLock(true);
+                    return true;
+                }
             }
         }
 
@@ -139,6 +148,15 @@ namespace Sweet_And_Salty_Studios
                     currentlyTargetedInteractable = null;
                 }
             }
+        }
+
+        public void SetNewPosition(Vector3 newPosition)
+        {
+            m_CharacterController.enabled = false;
+
+            transform.position = newPosition;
+
+            m_CharacterController.enabled = true;
         }
 
         #endregion CUSTOM_FUNCTIONS

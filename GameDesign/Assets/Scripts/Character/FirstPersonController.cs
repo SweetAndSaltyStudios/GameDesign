@@ -40,12 +40,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         public AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        protected CharacterController m_CharacterController;
         private Camera m_Camera;
         private bool m_Jump;
-        private float m_YRotation;
+        private readonly float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
-        private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
         private Vector3 m_OriginalCameraPosition;
@@ -136,7 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
-            m_MouseLook.UpdateCursorLock();
+            //m_MouseLook.UpdateCursorLock();
         }
 
         private void PlayJumpSound()

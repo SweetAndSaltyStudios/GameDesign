@@ -6,7 +6,10 @@ namespace Sweet_And_Salty_Studios
     {
         #region VARIABLES
 
-        public CutsceneTextBox_UI CutsceneTextBox_UI;
+        [Space]
+        [Header("REFERENCES")]
+        public UI_ItemToolTip UI_ItemToolTip;
+        public UI_CutsceneToolTip CutsceneTextBox_UI;
         public Cursor Cursor;
         public Inventory Inventory;
 
