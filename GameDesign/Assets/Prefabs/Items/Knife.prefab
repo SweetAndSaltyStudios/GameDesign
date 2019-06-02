@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionPopupText: Knife
   PickupTime: 1
+  PickUp_Clip: {fileID: 8300000, guid: f576ff5d79788ee4886d11f889a1a354, type: 3}
+  OnHoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!65 &7302228960460342388
 BoxCollider:
   m_ObjectHideFlags: 0

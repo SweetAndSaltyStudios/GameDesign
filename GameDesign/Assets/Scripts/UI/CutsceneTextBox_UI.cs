@@ -8,12 +8,17 @@ namespace Sweet_And_Salty_Studios
         #region VARIABLES
 
         [Space]
-        [Header("References")]
-        public Image CutsceneImage;
-        public Text InfoText;
+        [Header("VARIABLES")]
+        public AudioClip UIPopUp_Clip;
 
         [Space]
-        [Header("Cutscene Sprites")]
+        [Header("REFERENCES")]
+        public Image CutsceneImage;
+        public Text InfoText;
+        public Transform PlayerPosition;
+
+        [Space]
+        [Header("CUTSCENE SPRITES")]
         public Sprite[] CutsceneSprites;
 
         private Animator animator;
@@ -49,6 +54,11 @@ namespace Sweet_And_Salty_Studios
         public void ShowCutscene(Sprite cutsceneSprite, bool showInfoText)
         {
             UIManager.Instance.Cursor.gameObject.SetActive(false);
+
+            if(UIPopUp_Clip != null)
+            {
+                AudioSource.PlayClipAtPoint(UIPopUp_Clip, PlayerPosition.position);
+            }
 
             for (int i = 0; i < CutsceneSprites.Length; i++)
             {

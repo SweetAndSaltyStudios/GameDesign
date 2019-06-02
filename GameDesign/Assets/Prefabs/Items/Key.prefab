@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionPopupText: Key
   PickupTime: 1
+  PickUp_Clip: {fileID: 8300000, guid: 9233cbd9defe96f4baef20e2c91d49da, type: 3}
+  OnHoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!65 &470119127171753889
 BoxCollider:
   m_ObjectHideFlags: 0

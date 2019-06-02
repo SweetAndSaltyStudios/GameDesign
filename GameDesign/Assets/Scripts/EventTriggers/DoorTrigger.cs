@@ -10,6 +10,8 @@ namespace Sweet_And_Salty_Studios
         public string InteractionPopupText;
         public float _InteractionTime;
         public float InteractionDelay;
+        public bool IsLocked;
+        public Item Key;
         public AudioClip DoorIsOpen_Clip;
         public AudioClip DoorIsLocked_Clip;
 
@@ -51,7 +53,17 @@ namespace Sweet_And_Salty_Studios
         private IEnumerator IDoorInteraction()
         {
             CanInteract = false;
-            AudioSource.PlayClipAtPoint(AudioClip, TargetPosition.position);
+
+            if (IsLocked)
+            {
+                Debug.LogError("DOOR IS LOCKED!");
+                AudioSource.PlayClipAtPoint(DoorIsLocked_Clip, transform.position);
+            }
+            else
+            {
+                Debug.Log("DOOR IS UNLOCKED!");
+                AudioSource.PlayClipAtPoint(DoorIsOpen_Clip, transform.position);
+            }
 
             yield return new WaitForSeconds(InteractionDelay);
 

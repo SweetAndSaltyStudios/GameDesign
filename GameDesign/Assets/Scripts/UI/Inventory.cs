@@ -5,7 +5,7 @@ namespace Sweet_And_Salty_Studios
 {
     public class Inventory : MonoBehaviour
     {
-        private const int MAX_ITEM_SLOTS = 15;
+        private const int MAX_ITEM_SLOTS = 16;
 
         [Space]
         [Header("REFERENCES")]
@@ -47,14 +47,27 @@ namespace Sweet_And_Salty_Studios
             inventoryPanel.SetActive(isActive);
         }
 
-        public void AddItem(Item item)
+        public bool AddItem(Item item)
         {
+            if (Items.Contains(item))
+            {
+                Debug.LogWarning("We already have a '" + item.name + "' in inventory!");
+                return true;
+            }
 
+            Debug.Log("Item '" + item.name + "' added in inventory!");
+            Items.Add(item);
+            return false;
         }
 
-        public void RemoveItem(Item item)
+        public bool RemoveItem(Item item)
         {
+            return Items.Remove(item);
+        }
 
+        private void UpdateItemSlot(Sprite newItemSprite)
+        {
+           
         }
     }
 }

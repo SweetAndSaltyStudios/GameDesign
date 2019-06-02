@@ -8,10 +8,13 @@ namespace Sweet_And_Salty_Studios
         [Header("VARIABLES")]
         public string InteractionPopupText;
         public float PickupTime = 0;
-        public AudioClip PickUpSound;
-        public Color OnHoverColor = Color.yellow;
+        public AudioClip PickUp_Clip;
+        public Color HoverColor = Color.yellow;
         private Color normalColor = Color.white;
 
+        [Space]
+        [Header("VISUALS")]
+        public Sprite InventorySprite;
         private MeshRenderer[] meshRenderers;
 
         public float InteractionTime => PickupTime;
@@ -31,7 +34,7 @@ namespace Sweet_And_Salty_Studios
         {
             for (int i = 0; i < meshRenderers.Length; i++)
             {
-                meshRenderers[i].material.color = OnHoverColor;
+                meshRenderers[i].material.color = HoverColor;
             }
 
             UIManager.Instance.Cursor.SetPickupProgressImage(true);
@@ -40,15 +43,16 @@ namespace Sweet_And_Salty_Studios
 
         public void OnInteract()
         {
-            if(PickUpSound != null)
+            if(PickUp_Clip != null)
             {
-                AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
+                AudioSource.PlayClipAtPoint(PickUp_Clip, transform.position);
             }
 
             CanInteract = false;
 
             gameObject.SetActive(false);
 
+            UIManager.Instance.Inventory.AddItem(this);
         }
 
         public void OnEndHover()
